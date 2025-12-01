@@ -1,2 +1,2 @@
 # OpenCV-training
-OpenCv course
+Repositorio de ejercicios y prácticas de OpenCV.
