@@ -16,5 +16,5 @@ cv.imshow('HSV', hsv)
 lab = cv.cvtColor(img, cv.COLOR_BGR2LAB)
 cv.imshow('LAB', lab)
 
-# Prueba commit
+# Prueba commit  
 cv.waitKey(0) #Funcion de teclado que espera una tecla. 0 implica espera infinita 

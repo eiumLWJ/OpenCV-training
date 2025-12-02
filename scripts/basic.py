@@ -27,7 +27,7 @@ cv.imshow('Eroded', eroded)
 # Resize ignoring the aspect ratio
 resized = cv.resize(img,(500,500), interpolation = cv.INTER_AREA) #dsize is destination size
 # For reducing, INTER_AREA
-# For augmenting, INTER_LINEAR or INTER_CUBIC (the slowest, but more quality)
+# For augmenting, INTER_LINEAR or INTER_CUBIC (the slowest, but highter quality)
 cv.imshow('Resized', resized)
 
 # Cropping
