@@ -1,0 +1,41 @@
+import cv2 as cv
+
+img = cv.imread('Photos/EIUM_Bk.jpeg') 
+
+cv.imshow('Logo',img)
+
+# Smooth or bluring to reduce noise (caused by sensor, lightening)
+
+# GAUSSIAN METHOD
+# We need to define a window (kernel), the pixels of the window (ksize, window size) are changed. 
+# The center pixel intensity is the average of the surrounding ones
+
+#Averaging
+ksize = (3,3)
+average = cv.blur(img,ksize)
+cv.imshow('Average Blur', average)
+
+# The highter is the ksize, more blured will be the image
+# ksize = (7,7)
+average = cv.blur(img,ksize)
+cv.imshow('Average Blur', average)
+
+# Gaussian blur, more natural, using the same ksize, we will see it less blured
+gauss = cv.GaussianBlur(img,ksize,0)
+cv.imshow('Gaussian Blur',gauss)
+
+# Median blur, instead finding the average, uses the median
+# More effective, mostly used in 'Salt&Pepper' noise images
+# ksize at this time will be just an int and not meant for ksizes as 5 or 7, is more for 3
+median = cv.medianBlur(img,3,0)
+cv.imshow('Median Blur',median)
+
+# Bilateral 
+# Most effective because it retains the edges in image
+# sigmaColour, when larger it is, more colours will be considered
+# sigmaSpace, when larger it is, more pixels from center will be considered
+bilateral = cv.bilateralFilter(img, 5, 15, 15)
+cv.imshow('Bileteral Blur',bilateral)
+
+
+cv.waitKey(0) 
