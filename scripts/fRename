@@ -1,0 +1,18 @@
+import cv2 as cv
+
+# Load
+image_path = 'Photos/EIUM_Bk.jpeg'
+image = cv.imread(image_path)
+
+# Save copy as png
+image_copy_path = 'Photos/EIUM_Bk.png'
+cv.imwrite(image_copy_path, image)
+
+# Load copy
+image_copy = cv.imread(image_copy_path)
+
+# Show
+cv.imshow('Original', image)
+cv.imshow('Copy', image_copy)
+cv.waitKey(0)
+cv.destroyAllWindows()
